@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ước của 1 số</title>
+</head>
+<h1>nhập ước của 1 số khác 0</h1>
+<body>
+<input type="number" id="num"/>
+<input type="button" onclick="count()"value="đếm số nè"/>
+
+<p id="count"></p>
+<script>
+    function count() {
+        let dem = 0;
+        document.getElementById('count').innerHTML = " ";
+        let num = parseInt(document.getElementById('num').value) ;
+        if (num < 1)
+            document.getElementById('count').innerHTML = "Không hợp lệ";
+        else {
+            for ( let i = 2; i <= (num/2);i++ ) {
+                if (num %i==0) {
+                    dem++;
+                }
+            }
+            document.getElementById('count').innerHTML = dem;
+        }
+    }
+</script>
+</body>
+</html>
